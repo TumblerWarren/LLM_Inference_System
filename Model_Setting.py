@@ -3,9 +3,12 @@ import prompt_formatting
 import Value_Reading
 import subprocess
 from dotenv import load_dotenv
-import os
+import os, json
 
 load_dotenv(".env")
+load_history = os.environ.get("load_history")
+save_history = os.environ.get("save_history")
+
 subprocess.call(['python','Model_Parameters.py'])
 subprocess.call(['python','prompt_template_setting.py'])
 
@@ -25,11 +28,18 @@ llm = Llama(model_path=os.environ.get("MODEL_PATH"),
             rope_freq_scale=model_params["rope_freq_scale"], n_gqa=model_params["n_gqa"],
             rms_norm_eps=model_params["rms_norm_eps"], verbose=model_params["verbose"])
 
-prompt = prompt_formatting.card_read()
+
+
+
+
+if load_history == "True":
+    prompt = prompt_formatting.history_read()
+else:
+    prompt,user_name = prompt_formatting.card_read()
 
 while 1:
 
-    user_input = "Warren: " + input("Enter your chat: ")
+    user_input = user_name +": " + input("Enter your chat: ")
     ai = "Ayaka: "
     prompt = f"{prompt}\n{user_input}\n{ai}"
 
@@ -41,7 +51,7 @@ while 1:
                                        top_p=prompt_template_param["top_p"],
                                        logprobs=prompt_template_param["logprobs"],
                                        echo=prompt_template_param["echo"],
-                                       stop=prompt_template_param["stop"],
+                                       stop=[user_name+":"],
                                        frequency_penalty=0.0,presence_penalty=0.0,
                                        repeat_penalty=prompt_template_param["repeat_penalty"],
                                        top_k=prompt_template_param["top_k"],
@@ -59,4 +69,15 @@ while 1:
     promptlist = promptlist[0:len(promptlist) - 1]
     prompt = f"{prompt}{text}"
 
+
+    print(prompt)
+    print(llm.tokenize(prompt, add_bos=True))
+
+    if save_history == "True":
+
+        with open('prompt_history.json', 'w') as json_file:
+            json.dump(prompt, json_file, indent=4)
+
+
     print(text)
+
