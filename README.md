@@ -1,7 +1,7 @@
 # LLM_Inference_System
 
 <div>
- <a href="https://ibb.co/pLsZxbY"><img src="https://i.ibb.co/HHMYVB5/Dream-Shaper-v7-she-is-16-and-she-is-a-stylish-girl-in-Britain-3.jpg" alt="Dream-Shaper-v7-she-is-16-and-she-is-a-stylish-girl-in-Britain-3" border="0"></a>
+ 
   <br>
   <h1>💬A Chat Based LLM Inference System! </h1>
 </div>
