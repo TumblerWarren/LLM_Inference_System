@@ -15,7 +15,7 @@ A chat based inference system like oogabooga made using Llama-cpp.
 ## Collab Version
 [Coming Soon]
 
-✔️✔️ Requirements:
+## ✔️✔️ Requirements:
 - Above Windows 7
 - [C++ Compiler](https://sourceforge.net/projects/mingw-w64/)
 - [Git](https://git-scm.com/)
