@@ -21,7 +21,7 @@ DEFAULT_VALUES = {
 }
 
 def save_to_env_file(values):
-    with open(".env_prompt_template_setting", "w") as f:
+    with open("../.env_prompt_template_setting", "w") as f:
         for key, value in values.items():
             f.write(f"{key}={value}\n")
     messagebox.showinfo("Saved", "Values have been saved to the .env file.")

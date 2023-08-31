@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 
 def get_prompt_template_param():
-    load_dotenv(".env_prompt_template_setting")
+    load_dotenv("../.env_prompt_template_setting")
     template_params={}
 
     if os.environ.get("suffix") == "None" or os.environ.get("suffix") == "":
@@ -39,7 +39,7 @@ def get_prompt_template_param():
 
 
 def get_model_parameter_value():
-    load_dotenv(".env_model_param")
+    load_dotenv("../.env_model_param")
     model_params = {}
     model_params["n_ctx"] = int(os.environ.get("n_ctx"))
     model_params["n_parts"] = int(os.environ.get("n_parts"))
