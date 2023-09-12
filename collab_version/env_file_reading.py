@@ -1,5 +1,5 @@
 def env_read():
-    with open('../env.txt', 'r') as file:
+    with open('../Resource/data_file/env.txt', 'r') as file:
         lines = file.readlines()
 
     # Create a dictionary to store the configuration data
@@ -20,7 +20,7 @@ def env_read():
 
 
 def env_model_param_read():
-    with open('../env_model_param.txt', 'r') as file:
+    with open('../Resource/data_file/env_model_param.txt', 'r') as file:
         lines = file.readlines()
 
     # Create a dictionary to store the configuration data
@@ -40,7 +40,7 @@ def env_model_param_read():
     return env_data
 
 def env_prompt_template_read():
-    with open('../env_prompt_template_setting.txt', 'r') as file:
+    with open('../Resource/data_file/env_prompt_template_setting.txt', 'r') as file:
         lines = file.readlines()
 
     # Create a dictionary to store the configuration data

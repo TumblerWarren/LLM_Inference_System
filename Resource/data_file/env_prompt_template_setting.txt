@@ -1,0 +1,10 @@
+suffix=
+max_tokens=56
+temperature=1.31
+top_p=0.14
+logprobs=
+echo=0
+stop=
+repeat_penalty=1.17
+top_k=40
+stream=0

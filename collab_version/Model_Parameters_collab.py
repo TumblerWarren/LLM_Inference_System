@@ -88,7 +88,7 @@ def load_model_parameter_value():
 
 
 def save_to_env_file(options):
-    with open("../env_model_param.txt", "w") as f:
+    with open("../Resource/data_file/env_model_param.txt", "w") as f:
         for key, value in options.items():
             f.write(f"{key}={value}\n")
     messagebox.showinfo("Saved", "Values have been saved to the .env file.")
