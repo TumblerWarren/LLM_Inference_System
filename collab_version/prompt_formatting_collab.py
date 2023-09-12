@@ -96,8 +96,8 @@ def save_history(segment):
     history["history"] = chat_history
 
     FILENAME = "prompt_history.json"
-    current_directory = os.path.dirname(os.path.abspath(__file__))
-    FILE_PATH = os.path.join(current_directory, "..", "resource", "Card", FILENAME)
+    directory = '/content/LLM_Inference_System/Resource/Card'
+    FILE_PATH = os.path.join(directory, FILENAME)
 
     with open(FILE_PATH, 'w') as json_file:
         json.dump(history, json_file, indent=4)
