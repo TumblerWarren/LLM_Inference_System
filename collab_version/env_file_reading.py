@@ -58,6 +58,3 @@ def env_prompt_template_read():
             env_data[key] = None  # Set the value to None or handle it as needed
 
     return env_data
-
-
-print(env_read())
