@@ -1,24 +1,22 @@
+import os
+import threading
+from flask import Flask, request, jsonify
+from pyngrok import ngrok
 from llama_cpp import Llama
 import prompt_formatting_collab
 import Value_Reading_collab
-import subprocess
-import os
-from flask import Flask, request, jsonify
 import env_file_reading
 
-app = Flask(__name__)
+os.environ["FLASK_ENV"] = "development"
 
+app = Flask(__name__)
 
 env_data = env_file_reading.env_read()
 load_history = env_data['load_history']
 model_path = env_data['MODEL_PATH']
 
-subprocess.call(['python','Model_Parameters_collab.py'])
-subprocess.call(['python','prompt_template_setting_collab.py'])
-
 prompt_template_param = Value_Reading_collab.get_prompt_template_param()
 model_params = Value_Reading_collab.get_model_parameter_value()
-
 
 llm = Llama(model_path=model_path,
             n_ctx=model_params['n_ctx'], n_parts=model_params["n_parts"],
@@ -32,8 +30,9 @@ llm = Llama(model_path=model_path,
             tensor_split=model_params["tensor_split"], rope_freq_base=model_params["rope_freq_base"],
             rope_freq_scale=model_params["rope_freq_scale"], n_gqa=model_params["n_gqa"],
             rms_norm_eps=model_params["rms_norm_eps"], verbose=model_params["verbose"])
-def generate (prompt, user_name):
 
+
+def generate(prompt, user_name):
     completion = llm.create_completion(prompt,
                                        suffix=prompt_template_param["suffix"],
                                        max_tokens=prompt_template_param["max_tokens"],
@@ -53,9 +52,9 @@ def generate (prompt, user_name):
                                        logits_processor=None)
     return completion
 
+
 @app.route('/generate_response', methods=['POST'])
 def generate_response():
-
     chat = ""
     try:
         user_send_input = request.json['user_send_input']
@@ -104,5 +103,17 @@ def generate_response():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+
 if __name__ == '__main__':
+    # Open a ngrok tunnel to the Flask app
+    public_url = ngrok.connect(5000).public_url
+    print(" * ngrok tunnel \"{}\" -> \"http://127.0.0.1:{}/\"".format(public_url, 5000))
+
+    # Update any base URLs to use the public ngrok URL
+    app.config["BASE_URL"] = public_url
+
+    # Start the Flask server in a new thread
+    threading.Thread(target=app.run, kwargs={"use_reloader": False}).start()
+    '''
     app.run(host='0.0.0.0', port=5000)
+    '''

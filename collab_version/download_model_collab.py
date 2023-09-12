@@ -1,8 +1,8 @@
 from huggingface_hub import hf_hub_download
 import os
 
-REPO_ID = "TheBloke/CodeLlama-13B-Python-GGML"
-FILENAME = "codellama-13b-python.ggmlv3.Q2_K.bin"
+REPO_ID = "TheBloke/Pygmalion-2-7B-GGUF"
+FILENAME = "pygmalion-2-7b.Q5_K_M.gguf"
 LOCAL_DIR = "../Resource/Model"  # Use forward slashes for directory paths
 
 # Check if the local directory exists, and if not, create it
