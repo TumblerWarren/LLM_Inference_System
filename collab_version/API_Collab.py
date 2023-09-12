@@ -105,6 +105,7 @@ def generate_response():
 
 
 if __name__ == '__main__':
+    '''
     # Open a ngrok tunnel to the Flask app
     public_url = ngrok.connect(5000).public_url
     print(" * ngrok tunnel \"{}\" -> \"http://127.0.0.1:{}/\"".format(public_url, 5000))
@@ -116,4 +117,4 @@ if __name__ == '__main__':
     threading.Thread(target=app.run, kwargs={"use_reloader": False}).start()
     '''
     app.run(host='0.0.0.0', port=5000)
-    '''
+   
