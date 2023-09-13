@@ -3,3 +3,4 @@ Flask~=2.3.2
 llama-cpp-python==0.1.78
 huggingface_hub
 requests~=2.31.0
+pyngrok
