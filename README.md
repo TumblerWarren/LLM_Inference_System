@@ -11,7 +11,7 @@ A chat based inference system like oogabooga made using Llama-cpp.
 [Coming Soon]
  
 ## Collab Version
-[Coming Soon]
+[OPEN COLLAB](https://colab.research.google.com/github/TumblerWarren/LLM_Inference_System/blob/master/Resource/collab_code/LLM_INFERENCE_COLLAB.ipynb)
 
 ## ✔️✔️ Requirements:
 - Above Windows 7
