@@ -7,7 +7,7 @@ import prompt_formatting_collab
 import Value_Reading_collab
 import env_file_reading
 
-os.environ["FLASK_ENV"] = "development"
+
 
 app = Flask(__name__)
 
@@ -108,13 +108,17 @@ if __name__ == '__main__':
     
     # Open a ngrok tunnel to the Flask app
     public_url = ngrok.connect(5000).public_url
-    print(" * ngrok tunnel \"{}\" -> \"http://127.0.0.1:{}/\"".format(public_url, 5000))
+    #print(" * ngrok tunnel \"{}\" -> \"http://127.0.0.1:{}/\"".format(public_url, 5000))
 
     # Update any base URLs to use the public ngrok URL
     app.config["BASE_URL"] = public_url
 
     # Start the Flask server in a new thread
     threading.Thread(target=app.run, kwargs={"use_reloader": False}).start()
+    print("")
+    print("PLACE THIS URL IN THE ENV FILE OF THE VIRTUAL AVATAR CHATBOT:-  ",public_url )
+    print("")
+
     '''
     app.run(host='0.0.0.0', port=5000)
     '''
