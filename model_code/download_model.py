@@ -11,3 +11,4 @@ if not os.path.exists(LOCAL_DIR):
 
 # Download the model to the local directory
 hf_hub_download(repo_id=REPO_ID, filename=FILENAME, local_dir=LOCAL_DIR)
+print("MODEL DOWNLOAD COMPLETE")

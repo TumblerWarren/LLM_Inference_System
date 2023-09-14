@@ -28,9 +28,6 @@ if %errorlevel% neq 0 (
     goto :end
 )
 
-REM Run API.py
-python API.py 2>> "%LOG_FILE%"
-
 :end
 
 cd ..
