@@ -6,7 +6,7 @@
 - Open the .env file and replace the Character Card Path.
 - Save the .env file.
 - Run "Install Requirement" in Collab Notebook.
-- Head to the [Ngrok website].(https://ngrok.com/)
+- Head to the [Ngrok website](https://ngrok.com/).
 
 ## TROUBLESHOOT 😵‍💫
 Some commom problems that you may encounter.
