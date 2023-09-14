@@ -30,6 +30,7 @@ llm = Llama(model_path=os.environ.get("MODEL_PATH"),
             tensor_split=model_params["tensor_split"], rope_freq_base=model_params["rope_freq_base"],
             rope_freq_scale=model_params["rope_freq_scale"], n_gqa=model_params["n_gqa"],
             rms_norm_eps=model_params["rms_norm_eps"], verbose=model_params["verbose"])
+print("MODEL IS LOADED!")
 def generate (prompt, user_name):
 
     completion = llm.create_completion(prompt,
@@ -104,3 +105,4 @@ def generate_response():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
+    print("API IS ONLINE!")
