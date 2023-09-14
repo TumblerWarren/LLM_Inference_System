@@ -11,7 +11,8 @@
 - Copy the authtoken and paste the authtoken in "Enter your Ngrok Token" in Collab Notebook.
 - Next run "Download Model" and "Run".
 - You will get a line "PLACE THIS URL IN THE ENV FILE OF THE VIRTUAL AVATAR CHATBOT" as shown in the image below.
-- ![image ](https://github.com/TumblerWarren/LLM_Inference_System/assets/137818183/b6a16359-2a3d-46c6-9374-c9d20e108726)
+  ![image ](https://github.com/TumblerWarren/LLM_Inference_System/assets/137818183/b6a16359-2a3d-46c6-9374-c9d20e108726)
+- Copy the URL Link and paste it in 
 
 
 ## TROUBLESHOOT 😵‍💫
