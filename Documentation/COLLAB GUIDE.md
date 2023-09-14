@@ -13,7 +13,7 @@
 - You will get a line "PLACE THIS URL IN THE ENV FILE OF THE VIRTUAL AVATAR CHATBOT" as shown in the image below.
   ![image ](https://github.com/TumblerWarren/LLM_Inference_System/assets/137818183/b6a16359-2a3d-46c6-9374-c9d20e108726)
 - Copy the URL Link and paste it in [API_TEST](https://github.com/TumblerWarren/LLM_Inference_System/blob/master/API_TEST.py) url part to use enable API Support.
-- You can also put in the .env file of my other project [Virtual Avatar Chatbot](https://github.com/TumblerWarren/Virtual_Avatar_ChatBot) instead of using betacharacter.ai website, which will keep you data private and safe.
+- You can also put in the .env file of my other project [Virtual Avatar Chatbot](https://github.com/TumblerWarren/Virtual_Avatar_ChatBot) instead of using betacharacter.ai website, which will keep your data private and safe.
 
 
 ## TROUBLESHOOT 😵‍💫
