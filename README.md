@@ -15,7 +15,7 @@ A chat based inference system like oogabooga made using Llama-cpp.
 
 ## DOCUMENTATION
 - [LOCAL INSTALLATION GUIDE](https://github.com/TumblerWarren/LLM_Inference_System/blob/master/Documentation/LOCAL%20INSTALLATION%20GUIDE.md)
-- [COLLAB GUIDE]()
+- [COLLAB GUIDE](https://github.com/TumblerWarren/LLM_Inference_System/blob/master/Documentation/COLLAB%20GUIDE.md)
 
 ##  🚧 Goals
 - Add VectorBase Functionality -- PENDING ⏳
