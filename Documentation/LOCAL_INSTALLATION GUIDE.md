@@ -1,7 +1,3 @@
-## REQUIREMENTS:- 
-- C++ Compiler
-- Above Windows 7
-  
 ## STEPS TO USE:-⚠️
 - Download the zip file. 
 - Extract it!
@@ -13,6 +9,4 @@
 
 ## TROUBLESHOOT 😵‍💫
 Some commom problems that you may encounter.
-- Run the startup.bat file first and wait for the process to complete , till it asks for permission in Vtube Studio.
-- Close the cmd.
-- Then start the Oogabooga Text Gen and then run the startup.bat file of Waifu.
+-Nothing For Now!
