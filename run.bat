@@ -19,14 +19,26 @@ python -m pip install -r requirements.txt 2>> "%LOG_FILE%"
 
 cd model_code
 
+REM Run downloadmodel.py
+python downloadmodel.py 2>> "%LOG_FILE%"
+
+REM Check the exit code of downloadmodel.py
+if %errorlevel% neq 0 (
+    echo Downloadmodel.py encountered an error. Exiting...
+    goto :end
+)
+
+REM Run API.py
 python API.py 2>> "%LOG_FILE%"
+
+:end
 
 cd ..
 
 REM Deactivate the virtual environment
 deactivate
 
-REM Display message and prompt user to exit
+REM Display message and prompt the user to exit
 echo.
 echo Batch file execution completed. Press any key to exit.
 pause >nul

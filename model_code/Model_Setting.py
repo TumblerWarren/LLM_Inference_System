@@ -9,6 +9,7 @@ load_dotenv("../.env")
 load_history = os.environ.get("load_history")
 save_history = os.environ.get("save_history")
 
+subprocess.call(['python','download_model.py'])
 subprocess.call(['python','Model_Parameters.py'])
 subprocess.call(['python','prompt_template_setting.py'])
 
