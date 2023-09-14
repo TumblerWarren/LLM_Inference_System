@@ -20,11 +20,11 @@ python -m pip install -r requirements.txt 2>> "%LOG_FILE%"
 cd model_code
 
 REM Run downloadmodel.py
-python downloadmodel.py 2>> "%LOG_FILE%"
+python download_model.py 2>> "%LOG_FILE%"
 
 REM Check the exit code of downloadmodel.py
 if %errorlevel% neq 0 (
-    echo Downloadmodel.py encountered an error. Exiting...
+    echo download_model.py encountered an error. Exiting...
     goto :end
 )
 
