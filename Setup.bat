@@ -22,15 +22,7 @@ cd model_code
 REM Run downloadmodel.py
 python download_model.py 2>> "%LOG_FILE%"
 
-REM Check the exit code of downloadmodel.py
-if %errorlevel% neq 0 (
-    echo download_model.py encountered an error. Exiting...
-    goto :end
-)
 
-:end
-
-cd ..
 
 REM Deactivate the virtual environment
 deactivate
