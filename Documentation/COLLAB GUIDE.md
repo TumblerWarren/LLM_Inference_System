@@ -6,7 +6,11 @@
 - Open the .env file and replace the Character Card Path.
 - Save the .env file.
 - Run "Install Requirement" in Collab Notebook.
-- Head to the [Ngrok website](https://ngrok.com/).
+- Login or Signup in [Ngrok website](https://ngrok.com/).
+- After login, under "Getting Started" head to "[Your Authtoken](https://dashboard.ngrok.com/get-started/your-authtoken)".
+- Copy the authtoken and paste the authtoken in "Enter your Ngrok Token" in Collab Notebook.
+- Next run "Download Model" and "Run".
+- You will get 
 
 ## TROUBLESHOOT 😵‍💫
 Some commom problems that you may encounter.
