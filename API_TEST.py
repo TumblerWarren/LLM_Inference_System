@@ -1,9 +1,9 @@
 import requests
 
-url = 'http://localhost:5000/generate_response'
+#url = 'http://localhost:5000/generate_response'
 #url = 'http://127.0.0.1:5000/generate_response'
 #url = 'http://172.28.0.12:5000/generate_response'
-#url = 'https://68fc-34-75-7-187.ngrok-free.app/generate_response'
+url = 'https://90d8-34-32-215-157.ngrok-free.app/generate_response'
 
 data = {'user_send_input': 'Lets go on a date then'}
 response = requests.post(url, json=data)

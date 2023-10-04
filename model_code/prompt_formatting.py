@@ -13,6 +13,7 @@ chat_history = ""
 dilogue = ""
 
 # Specify the path to the JSON file
+read_name = os.environ.get("your_name")
 Character_Card_path = os.environ.get("Character_Card")
 chat_history_path = os.environ.get("chat_history")
 
@@ -25,7 +26,7 @@ def card_read():
 # Extract the required fields from the loaded JSON data
     global name,char_name,char_persona,world_scenario,example_dialogue,dilogue
 
-    name = data["name"]
+    name = read_name
     char_name = data["char_name"]
     char_persona = data["char_persona"]
     world_scenario = data["world_scenario"]
@@ -45,7 +46,7 @@ def history_read():
     # Extract the required fields from the loaded JSON data
     global name, char_name, char_persona, world_scenario, example_dialogue,chat_history,dilogue
 
-    name = data["name"]
+    name = read_name
     char_name = data["char_name"]
     char_persona = data["char_persona"]
     world_scenario = data["world_scenario"]
@@ -85,7 +86,7 @@ def prompt_trimming(prompt_length,chat,prompt):
 def save_history(segment):
     global chat_history
 
-    history["name"] = name
+    history["name"] = read_name
     history["char_name"] = char_name
     history["char_persona"] = char_persona
     history["world_scenario"] = world_scenario
