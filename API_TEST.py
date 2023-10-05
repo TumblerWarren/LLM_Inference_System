@@ -3,9 +3,9 @@ import requests
 #url = 'http://localhost:5000/generate_response'
 #url = 'http://127.0.0.1:5000/generate_response'
 #url = 'http://172.28.0.12:5000/generate_response'
-url = 'https://bc51-202-8-116-73.ngrok-free.app/generate_response'
+url = 'https://475f-35-233-241-28.ngrok-free.app/generate_response'
 
-data = {'user_send_input': "let's go on a date together"}
+data = {'user_send_input': "your opinion pleae"}
 response = requests.post(url, json=data)
 
 print("Request Status Code:", response.status_code)
