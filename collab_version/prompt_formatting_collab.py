@@ -14,7 +14,7 @@ dilogue = ""
 # Specify the path to the JSON file
 env_data = env_file_reading.env_read()
 
-read_name = os.environ.get("your_name")
+read_name = env_data.get("your_name")
 Character_Card_path = env_data.get("Character_Card")
 chat_history_path = env_data.get("chat_history")
 

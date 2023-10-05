@@ -56,7 +56,9 @@ def generate_response():
     chat = ""
     try:
         user_send_input = request.json['user_send_input']
+
         if load_history == "True":
+
             prompt, user_name, char_name = prompt_formatting_collab.history_read()
 
             user_input = user_name + ": " + user_send_input
@@ -78,9 +80,10 @@ def generate_response():
             return jsonify({"response": text})
 
         else:
-            user_send_input = request.json['user_send_input']
+
             prompt, user_name, char_name = prompt_formatting_collab.card_read()
-            user_input = user_name + ": " + user_send_input
+
+            user_input = user_name + ": " + "user_send_input"
             ai = char_name + ": "
 
             prompt = f"{prompt}\n{user_input}\n{ai}"
@@ -96,6 +99,7 @@ def generate_response():
             t_text = prompt.encode()
             prompt_length = len(llm.tokenize(t_text))
             prompt, chat = prompt_formatting_collab.prompt_trimming(prompt_length, chat, prompt)
+
             return jsonify({"response": text})
 
     except Exception as e:
@@ -103,6 +107,7 @@ def generate_response():
 
 
 if __name__ == '__main__':
+
     # Open a ngrok tunnel to the Flask app
     public_url = ngrok.connect(5000).public_url
     # print(" * ngrok tunnel \"{}\" -> \"http://127.0.0.1:{}/\"".format(public_url, 5000))
