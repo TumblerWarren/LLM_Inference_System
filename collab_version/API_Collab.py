@@ -56,7 +56,6 @@ def generate_response():
     chat = ""
     try:
 
-
         if load_history == "True":
             user_send_input = request.json['user_send_input']
 
@@ -85,7 +84,7 @@ def generate_response():
 
             prompt, user_name, char_name = prompt_formatting_collab.card_read()
 
-            user_input = user_name + ": " + "user_send_input"
+            user_input = user_name + ": " + user_send_input
             ai = char_name + ": "
 
             prompt = f"{prompt}\n{user_input}\n{ai}"
